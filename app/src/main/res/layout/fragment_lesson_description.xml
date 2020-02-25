@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/cardview_shadow_start_color"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+            android:fitsSystemWindows="true"
+            android:background="@color/cardview_shadow_start_color"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleMarginEnd="64dp"
+                app:contentScrim="@color/colorWhite"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <!--Контент скрываемый-->
+
+
+            <android.support.constraint.ConstraintLayout
+                    android:background="@color/cardview_dark_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <include android:id="@+id/desc_toolbar"
+
+                         layout="@layout/toolbar"/>
+                <TextView
+                        android:id="@+id/lesson_text"
+                        android:text="@string/lesson_ru"
+                        style="@style/standard_big_text"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:layout_marginStart="@dimen/standard_margin"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/desc_toolbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                />
+
+                <TextView
+                        android:id="@+id/lesson_text_view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/lesson_text"
+                        app:layout_constraintBottom_toBottomOf="@id/lesson_text"
+                        tools:text="Йога"
+                        android:layout_marginEnd="@dimen/standard_margin"
+                        style="@style/standard_value_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                />
+                <TextView
+                        android:id="@+id/place_text"
+                        app:layout_constraintTop_toBottomOf="@id/lesson_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="@string/place"
+                        android:layout_marginStart="@dimen/standard_margin"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        style="@style/standard_big_text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+
+                <TextView
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/place_text"
+                        app:layout_constraintBottom_toBottomOf="@id/place_text"
+                        tools:text="Аудитори 1"
+                        android:layout_marginEnd="@dimen/standard_margin"
+                        style="@style/standard_value_text"
+                        android:id="@+id/place_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/time_text"
+                        app:layout_constraintTop_toBottomOf="@id/place_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/standard_margin"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:text="@string/time_of_the_lesson"
+                        style="@style/standard_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                />
+
+                <TextView
+                        android:id="@+id/time_text_view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/time_text"
+                        app:layout_constraintBottom_toBottomOf="@id/time_text"
+                        tools:text="19:00 - 22:00"
+
+                        android:layout_marginEnd="@dimen/standard_margin"
+                        style="@style/standard_value_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+
+            android:background="@color/colorPrimaryLight"
+            app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                    android:layout_marginBottom="@dimen/big_margin"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                <TextView
+                        style="@style/standard_black_text"
+                        android:text="@string/teacher_ru"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/standard_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                />
+
+                <TextView
+
+                        android:id="@+id/teacher_text_description_view"
+                        android:gravity="end"
+                        android:layout_marginEnd="@dimen/standard_margin"
+                        style="@style/standard_value_black_text"
+                        tools:text="Рабинович Марина Игнатьевна"
+                        android:layout_marginStart="@dimen/standard_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/place_frame"
+                    android:layout_marginBottom="@dimen/big_margin"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                <TextView
+                        style="@style/standard_black_text"
+                        android:text="@string/place"
+                        android:layout_marginStart="@dimen/standard_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                />
+
+                <TextView
+                        android:id="@+id/room_description_text_view"
+                        android:layout_marginEnd="@dimen/standard_margin"
+                        style="@style/standard_value_black_text"
+                        tools:text="Аудитория 4"
+                        android:layout_marginStart="@dimen/standard_margin"
+                        android:gravity="end"
+                        android:layout_width="match_parent"
+                        android:textAlignment="textEnd"
+                        android:layout_height="wrap_content"
+                />
+            </LinearLayout>
+
+
+            <TextView
+
+                    tools:text="огроооооооооооооооомное \n описааааааание\n уроооока"
+                    android:id="@+id/description_text_view"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/big_text_size"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            />
+            <!--Контент показваемый-->
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>
