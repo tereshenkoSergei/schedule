@@ -86,7 +86,7 @@
                         android:layout_marginTop="@dimen/standard_margin"
                         android:text="@string/time_of_the_lesson"
                         style="@style/standard_text"
-                        android:layout_width="wrap_content"
+                        android:layout_width="150sp"
                         android:layout_height="wrap_content"
                 />
 

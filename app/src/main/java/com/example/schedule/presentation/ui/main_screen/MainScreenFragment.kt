@@ -39,7 +39,7 @@ class MainScreenFragment : Fragment(), IMainFragmentView {
         super.onViewCreated(view, savedInstanceState)
 
         toolbar.setNavigationOnClickListener {
-           activity?.onBackPressed()
+           activity?.finish()
         }
 
 
